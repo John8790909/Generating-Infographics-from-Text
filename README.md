@@ -15,41 +15,59 @@ The app includes:
   * **Programmable Search Engine** (formerly known as Google Custom Search Engine / GCS & Google Co-op)
     * Manipulating information in web searches; refining and categorising queries of the user search input 
 
-## :link: Supports:
+## :link: Prerequisite
 Operating Systems |
 | :---:
-  - [x] Microsoft Windows 10 (_recommended_)
-  - [x] Linux
-  - [x] MacOS
+  - [x] Microsoft Windows 10 (_recommended_) |
+  - [x] Linux |
+  - [x] MacOS |
 
 Web Browsers |
 | :---:
-  - [x] Google Chrome (_highly recommended_)
+  - [x] Google Chrome (_highly recommended_) 
   - [x] Firefox
   - [x] Microsoft Edge
 
+Intergrated Development Environment (IDE) |
+| :---:
+   - [x] Any IDE's can be chosen (Visual Studio Code, IntelliJ IDEA, Atom, NetBeans etc)
+
+
 
 ## :wrench: Installation Setup
-Step 1 ) You will need to configure a **Virtual Environment** in your machine through the CLI (_Command Prompt / Terminal Window_): 
+Before getting started with the project and interacting through the CLI (Command Prompt / Terminal Window), few procedures must be done on the [**Google Developer**](https://developers.google.com/) platform: 
+
+### Step 1 ) Create a "Programmable Search Engine" 
+* Heading here: https://programmablesearchengine.google.com/about/ will take you to the Google's PSE about page. 
+* You will need to click on "Get Started" and follow along with the next set of on-screen instructions
+
+### Step 2 ) Acquire the "API Key"
+* After creating the personalised PSE, head over to the 'Custom Search JSON API' page to get an API key which you can click from here to make one:  https://developers.google.com/custom-search/v1/overview 
+
+### Step 3 ) Next, configure a "Virtual Environment": 
  * VEs manage dependencies for a particular project
-  * Packages installed for this project will not affect other Python-based projects or the wide operating system’s packages
+   * Packages installed for this project will not affect other Python projects or the wide operating system’s packages
  
- 1.1) * Creating a Python Virtual Environment:
+ #### Create Virtual Environment through Command-Line:
    * `$ mkdir myproject`
    * `$ cd myproject`
    * `$ python3 -m venv venv`
-   * On Windows:`$ py -3 -m venv venv`
+   * _On Windows:_ `> py -3 -m venv venv`
+   
+ #### Activate VE on Machine:  
+   * $ . venv/bin/activate
+   * _On Windows:_ `venv\Scripts\activate`
 
-Step 2 ) Using Python Package Manager (PIP), install the below named modules:
+### Using Python Package Manager (PIP), install the below named modules:
 
 _#_ | Module Packages | Supported Version | CLI Commannds | PyPI Repo
 | :---: | :---: | :---: | :---: | :---: |
- 1  | [Flask](https://flask.palletsprojects.com/en/1.1.x/installation/#install-flask)  | v 1.0 + | `pip install Flask` | https://pypi.org/project/Flask/
- 2  | [Google Search API](https://github.com/googleapis/google-api-python-client)| v 1.12 |`pip install google-api-python-client`| https://pypi.org/project/google-api-python-client/
- 3  | [Requests](https://requests.readthedocs.io/en/master/user/install/) | v 2.25 +  | `pip install requests` | https://pypi.org/project/requests/
- 4  | [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.html) | v 4.9 + | `pip install beautifulsoup4` | https://pypi.org/project/beautifulsoup4/
- 5  | [Natural Lanaguge Toolkit](https://www.nltk.org/install.html) | v. 3.5+  | `pip install nltk` | https://pypi.org/project/nltk/
- 6  | [WordCloud](https://amueller.github.io/word_cloud/https://pypi.org/project/wordcloud/) | v. 1.8 | `pip install wordcloud`| https://pypi.org/project/wordcloud/
+ 1  | [Flask](https://flask.palletsprojects.com/en/1.1.x/installation/#install-flask "To Flask website")  | v 1.0 + | `pip install Flask` | https://pypi.org/project/Flask/
+ 2  | [Google Search API](https://github.com/googleapis/google-api-python-client "Official Google Search API GitHub repo")| v 1.12 |`pip install google-api-python-client`| https://pypi.org/project/google-api-python-client/
+ 3  | [Requests](https://requests.readthedocs.io/en/master/user/install/ "Requests website") | v 2.25 +  | `pip install requests` | https://pypi.org/project/requests/
+ 4  | [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.html "BeautifulSoup site") | v 4.9 + | `pip install beautifulsoup4` | https://pypi.org/project/beautifulsoup4/
+ 5  | [Natural Lanaguge Toolkit](https://www.nltk.org/install.html "Official NLTK website") | v. 3.5+  | `pip install nltk` | https://pypi.org/project/nltk/
+ 6  | [WordCloud](https://amueller.github.io/word_cloud/https://pypi.org/project/wordcloud/ "WordCloud") | v. 1.8 | `pip install wordcloud`| https://pypi.org/project/wordcloud/
 
 
 
