@@ -2,7 +2,7 @@
 ~ ~ ~ BSc (Hons) Computer Science | Yr 3 Lvl 6 - Project ~ ~ ~
 
 
-An automated-based application that allow user(s) to enter a search query on an interactive form. This webscraps data from multiple URLs using  **Google Search API** [(GS)](https://github.com/googleapis/google-api-python-client "Click to see more info"), preprocesses the retrieved HTML pages into a **cleaned data** presentable format, applies **Natrual Language Processing** [(NLP)](https://en.wikipedia.org/wiki/Natural_language_processing "Click for more info in NLP") operations to the dataset and generates a visualised informational graphic (_a.k.a. "infographic"_) as the resulted output.
+An automated-based system that allow user(s) to enter a search query on an interactive form. This webscraps data from multiple URLs using  **Google Search Application Programming Interface** [(GS API)](https://github.com/googleapis/google-api-python-client "Click to see more info about GS API"), preprocesses the retrieved HTML pages into a **cleaned data** presentable format, applies **Natrual Language Processing** [(NLP)](https://en.wikipedia.org/wiki/Natural_language_processing "Click for more info in NLP") operations to the dataset and generates a visualised informational graphic (_a.k.a. "infographic"_) as the resulted output.
 
 ## :page_facing_up: Description
 GIFT is scripted in the [Python](https://www.python.org/) programming language at the back-end server-side.
@@ -15,10 +15,10 @@ The app includes:
  * Programmable Search Engine (formerly known as Google Custom Search Engine / GCS & Google Co-op)
    * Manipulating information in web searches; refining and categorising queries of the user search input 
 
-## :paperclip: This application supports:
-  * Python version 3.5, 3.6, 3.7, or 3.8
-  * Flask version preferable 1.0+
-  * NLTK version 3.5
+## :link: This application supports:
+  - [x] Python version 3.5, 3.6, 3.7, or 3.8
+  - [x] Flask version preferably 1.0+
+  - [x] NLTK version 3.5
 
 
 ## :wrench: Installation Setup
