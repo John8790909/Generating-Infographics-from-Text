@@ -10,10 +10,10 @@ With the use of simple micro web framework, [Flask](https://pypi.org/project/Fla
 structured in [HTML5](https://www.w3.org/standards/webdesign/htmlcss) and styled with [CSS3](https://www.w3.org/standards/webdesign/htmlcss)
 
 The app includes:
- * [normal] Google Custom Search API (GCS API) / Custom Search API (CS API)
-   * Providing 100 search queries to be used for free on the system per day
- * Programmable Search Engine (formerly known as Google Custom Search Engine / GCS & Google Co-op)
-   * Manipulating information in web searches; refining and categorising queries of the user search input 
+  * Google Custom Search API (GCS API) / Custom Search API (CS API)
+    * Providing 100 search queries to be used for free on the system per day
+  * Programmable Search Engine (formerly known as Google Custom Search Engine / GCS & Google Co-op)
+    * Manipulating information in web searches; refining and categorising queries of the user search input 
 
 ## :link: This application supports:
   - [x] Python version 3.5, 3.6, 3.7, or 3.8
@@ -27,7 +27,7 @@ Using Python Package Manager (PIP), you will need to install the following on yo
 _#_ | Module Packages | CLI Commannds | Module Websites
  | :---: | :---: | :---: | :---:
  1  |  Flask                       | `pip install Flask`                        | [Official Flask site](https://flask.palletsprojects.com/en/1.1.x/installation/#install-flask)
- 2  |  Google Search API           | `pip install google-api-python-client`     | [Official Google SE repo](https://github.com/googleapis/google-api-python-client
+ 2  |  Google Search API           | `pip install google-api-python-client`     | [Official Google API repo](https://github.com/googleapis/google-api-python-client)
  3  |  Requests                    | `pip install requests`               | [Official Requests site](https://requests.readthedocs.io/en/master/user/install/)
  4  |  BeautifulSoup               | 'pip install beautifulsoup4          | [Official BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.html)
  3  |  Natural Lanaguge Toolkit    | `pip install nltk`                   | [Official NLTK site](https://www.nltk.org/install.html)
