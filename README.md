@@ -15,23 +15,41 @@ The app includes:
   * **Programmable Search Engine** (formerly known as Google Custom Search Engine / GCS & Google Co-op)
     * Manipulating information in web searches; refining and categorising queries of the user search input 
 
-## :link: This application supports:
-  - [x] Python version 3.5, 3.6, 3.7, or 3.8
-  - [x] Flask version preferably 1.0+
-  - [x] NLTK version 3.5
+## :link: Supports:
+Operating Systems |
+| :---:
+  - [x] Microsoft Windows 10 (_recommended_)
+  - [x] Linux
+  - [x] MacOS
+
+Web Browsers |
+| :---:
+  - [x] Google Chrome (_highly recommended_)
+  - [x] Firefox
+  - [x] Microsoft Edge
 
 
 ## :wrench: Installation Setup
-Using Python Package Manager (PIP), you will need to install the following on your machine's CLI (_Command Prompt / Terminal Window_): 
+Step 1 ) You will need to configure a **Virtual Environment** in your machine through the CLI (_Command Prompt / Terminal Window_): 
+ * VEs manage dependencies for a particular project
+  * Packages installed for this project will not affect other Python-based projects or the wide operating system’s packages
+ 
+ 1.1) * Creating a Python Virtual Environment:
+   * `$ mkdir myproject`
+   * `$ cd myproject`
+   * `$ python3 -m venv venv`
+   * On Windows:`$ py -3 -m venv venv`
 
-_#_ | Module Packages | CLI Commannds | Module Websites
-| :---: | :---: | :---: | :---:
- 1  |  Flask                       | `pip install Flask`                        | [Official Flask site](https://flask.palletsprojects.com/en/1.1.x/installation/#install-flask)
- 2  |  Google Search API           | `pip install google-api-python-client`     | [Official Google API repo](https://github.com/googleapis/google-api-python-client)
- 3  |  Requests                    | `pip install requests`               | [Official Requests site](https://requests.readthedocs.io/en/master/user/install/)
- 4  |  BeautifulSoup               | `pip install beautifulsoup4'         | [Official BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.html)
- 3  |  Natural Lanaguge Toolkit    | `pip install nltk`                   | [Official NLTK site](https://www.nltk.org/install.html)
- 4  |  WordCloud                   | `pip install wordcloud`              | [Official WordCloud site](https://amueller.github.io/word_cloud/https://pypi.org/project/wordcloud/)
+Step 2 ) Using Python Package Manager (PIP), install the below named modules:
+
+_#_ | Module Packages | Supported Version | CLI Commannds | PyPI Repo
+| :---: | :---: | :---: | :---: | :---: |
+ 1  | [Flask](https://flask.palletsprojects.com/en/1.1.x/installation/#install-flask)  | v 1.0 + | `pip install Flask` | https://pypi.org/project/Flask/
+ 2  | [Google Search API](https://github.com/googleapis/google-api-python-client)| v 1.12 |`pip install google-api-python-client`| https://pypi.org/project/google-api-python-client/
+ 3  | [Requests](https://requests.readthedocs.io/en/master/user/install/) | v 2.25 +  | `pip install requests` | https://pypi.org/project/requests/
+ 4  | [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.html) | v 4.9 + | `pip install beautifulsoup4` | https://pypi.org/project/beautifulsoup4/
+ 5  | [Natural Lanaguge Toolkit](https://www.nltk.org/install.html) | v. 3.5+  | `pip install nltk` | https://pypi.org/project/nltk/
+ 6  | [WordCloud](https://amueller.github.io/word_cloud/https://pypi.org/project/wordcloud/) | v. 1.8 | `pip install wordcloud`| https://pypi.org/project/wordcloud/
 
 
 
