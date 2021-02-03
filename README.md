@@ -1,5 +1,6 @@
-# Generating Infographics from Text
-BSc (Hons) Computer Science | Yr 3 Lvl 6 - Project
+# Generating Infographics from Text #
+~ ~ ~ BSc (Hons) Computer Science | Yr 3 Lvl 6 - Project ~ ~ ~
+
 
 An automated-based application that allows user(s) to enter a search query on an interactive form and generates some form of informational graphic.
 
