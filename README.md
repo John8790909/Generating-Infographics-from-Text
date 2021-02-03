@@ -18,13 +18,13 @@ The app includes:
 ## :link: Prerequisite
 Operating Systems |
 | :---:
-  - [x] Microsoft Windows 10 (_recommended_) |
-  - [x] Linux |
-  - [x] MacOS |
+  - [x] Microsoft Windows 10 ( _recommended_ )
+  - [x] Linux
+  - [x] MacOS
 
 Web Browsers |
 | :---:
-  - [x] Google Chrome (_highly recommended_) 
+  - [x] Google Chrome ( _highly recommended_ ) 
   - [x] Firefox
   - [x] Microsoft Edge
 
@@ -60,7 +60,7 @@ Before getting started with the project and interacting through the CLI (Command
 
 ### Step 4 ) Through the CLI, install the below named modules on the VE:
 
-_#_ | Module Packages | Supported Version | CLI Commannds | PyPI Repo
+_#_ | Module Packages | Supported Version | Module Pip Commands | PyPI Repo
 | :---: | :---: | :---: | :---: | :---: |
  1  | [Flask](https://flask.palletsprojects.com/en/1.1.x/installation/#install-flask "To Flask website")  | v 1.0 + | `pip install Flask` | https://pypi.org/project/Flask/
  2  | [Google Search API](https://github.com/googleapis/google-api-python-client "Official Google Search API GitHub repo")| v 1.12 |`pip install google-api-python-client`| https://pypi.org/project/google-api-python-client/
@@ -79,4 +79,4 @@ _For more information on these modules, please visit their respective websites b
 
 
 ## License
---
+---
