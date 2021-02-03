@@ -25,7 +25,7 @@ The app includes:
 Using Python Package Manager (PIP), you will need to install the following on your machine's CLI (_Command Prompt / Terminal Window_): 
 
 _#_ | Module Packages | CLI Commannds | Module Websites
-    | :---: | :---: | :---: | :---:
+| :---: | :---: | :---: | :---:
  1  |  Flask                       | `pip install Flask`                        | [Official Flask site](https://flask.palletsprojects.com/en/1.1.x/installation/#install-flask)
  2  |  Google Search API           | `pip install google-api-python-client`     | [Official Google API repo](https://github.com/googleapis/google-api-python-client)
  3  |  Requests                    | `pip install requests`               | [Official Requests site](https://requests.readthedocs.io/en/master/user/install/)
