@@ -44,7 +44,7 @@ Before getting started with the project and interacting through the CLI (Command
 ### Step 2 ) Acquire the "API Key"
 * After creating the personalised PSE, head over to the 'Custom Search JSON API' page to get an API key which you can click from here to make one:  https://developers.google.com/custom-search/v1/overview 
 
-### Step 3 ) Next, configure a "Virtual Environment": 
+### Step 3 ) Next, configure a "Virtual Environment":
  * VEs manage dependencies for a particular project
    * Packages installed for this project will not affect other Python projects or the wide operating system’s packages
  
@@ -58,7 +58,7 @@ Before getting started with the project and interacting through the CLI (Command
    * $ . venv/bin/activate
    * _On Windows:_ `venv\Scripts\activate`
 
-### Step 4 ) Through the CLI, install the below named modules:
+### Step 4 ) Through the CLI, install the below named modules on the VE:
 
 _#_ | Module Packages | Supported Version | CLI Commannds | PyPI Repo
 | :---: | :---: | :---: | :---: | :---: |
