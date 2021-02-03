@@ -58,7 +58,7 @@ Before getting started with the project and interacting through the CLI (Command
    * $ . venv/bin/activate
    * _On Windows:_ `venv\Scripts\activate`
 
-### Using Python Package Manager (PIP), install the below named modules:
+### Step 4 ) Through the CLI, install the below named modules:
 
 _#_ | Module Packages | Supported Version | CLI Commannds | PyPI Repo
 | :---: | :---: | :---: | :---: | :---: |
@@ -70,13 +70,12 @@ _#_ | Module Packages | Supported Version | CLI Commannds | PyPI Repo
  6  | [WordCloud](https://amueller.github.io/word_cloud/https://pypi.org/project/wordcloud/ "WordCloud") | v. 1.8 | `pip install wordcloud`| https://pypi.org/project/wordcloud/
 
 
-
 ## :grey_exclamation: Notes
  * Both [`Python`](https://www.python.org/downloads/) and [`pip`](https://packaging.python.org/tutorials/installing-packages/) packages must be pre-installed too - [`Python 3.4+`](https://www.python.org/downloads/release/python-340/) by default comes with the **pip install manager**
  
  * The [`wordcloud`](https://pypi.org/project/wordcloud/) module depends on: [`numpy`](https://numpy.org/install/) and [`pillow`](https://pillow.readthedocs.io/en/stable/installation.html) as well as [`matplotlib`](https://matplotlib.org/users/installing.html) 
 
-For more information on these modules, please visit their respective websites by clicking on the hyperlinks
+_For more information on these modules, please visit their respective websites by clicking on the hyperlinks_
 
 
 ## License
