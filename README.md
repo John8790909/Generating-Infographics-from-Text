@@ -55,7 +55,7 @@ Before getting started with the project and interacting through the CLI (Command
    * _On Windows:_ `> py -3 -m venv venv`
    
  #### Activate VE on Machine:  
-   * $ . venv/bin/activate
+   * `$ . venv/bin/activate`
    * _On Windows:_ `venv\Scripts\activate`
 
 ### Step 4 ) Through the CLI, install the below named modules on the VE:
