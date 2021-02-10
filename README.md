@@ -68,7 +68,7 @@ _#_ | Module Packages | Supported Version | Module Pip Commands | PyPI Repo
  4  | [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.html "BeautifulSoup site") | v 4.9 + | `pip install beautifulsoup4` | https://pypi.org/project/beautifulsoup4/
  5  | [Natural Lanaguge Toolkit](https://www.nltk.org/install.html "Official NLTK website") | v. 3.5+  | `pip install nltk` | https://pypi.org/project/nltk/
  6  | [WordCloud](https://amueller.github.io/word_cloud/https://pypi.org/project/wordcloud/ "WordCloud") | v. 1.8 | `pip install wordcloud`| https://pypi.org/project/wordcloud/
-
+ 7  | [SciPy](https://www.scipy.org/) | | `pip install scipy` | https://pypi.org/project/scipy/
 
 ## :grey_exclamation: Notes
  * Both [`Python`](https://www.python.org/downloads/) and [`pip`](https://packaging.python.org/tutorials/installing-packages/) packages must be pre-installed too - [`Python 3.4+`](https://www.python.org/downloads/release/python-340/) by default comes with the **pip install manager**
