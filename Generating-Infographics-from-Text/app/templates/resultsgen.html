@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+    <head>
+        <script src="{{url_for('static', filename='js/app.js')}}"></script>
+        <title> Query Extractor Generation </title>
+    </head>
+
+    <body>
+        <div class = "resultsgenHeader" style='text-align: center'> 
+            <h1> Query Extractor Generation </h1>
+            <p> This page extracted the input you queried on the search text field box, 
+                requests your term in a search API from multiple URL web addresses. With retrieved HTML web data being parsed, 
+                NLP's software libraries had been applied to the data </p>
+
+        </div>
+    
+        
+        <div class = "resultsgenSearchQueryWrapper" style='text-align: center'> 
+            <div>
+                <h2>Your searched for:.... </h2>
+                <p><strong><i> " {{q}} " </i></strong></p>
+            </div> 
+
+            <div class = "infogenWrapper" >
+                <div class = "infogenHeader">
+                    <h1> InfoGen Maker </h1>
+                    <p> Below is the generated graphic in the form of a Wordcloud visual accumlation of all the named entities</p> 
+                    <p> These named entities (also referred as NEs) has been processed by the use of Natural Language Processing tasks </p>
+                    <p> The bigger the size font of words you can see from this output, the more frequent entities have been retrieved </p>
+                    <p>... and likewise, the smaller the size font of words, the less common entities were retrieved from a webpage that took your entered search query</p>
+                </div>
+
+                <div class = btnGenWrapper> 
+                    <button type="button" id="btnGenSimpleWordcloud" onclick="generateSimpleWordcloud()" alt="Generate Simple Wordcloud"> Generate Simple Wordcloud </button>
+                    <button type="button" id="btnGenStyledWordcloud" onclick="generateStyledWordcloud()" alt="Generate Styled Wordcloud"> Generate Styled Wordcloud </button>
+                    <button type="button" id="btnGenMapVisualisation" onclick="generateMapVisual()" alt="Generate Map Visualisation"> Generate Map Visualisation </button>
+                </div>
+                
+                <div id="wrapperSimpleWordcloud" style="display: none">
+                    <img src="{{url_for('static', filename='img/infographics/wordcloud.jpg')}}" alt="Generated Wordcloud Image" width=1000 height=1000>
+                </div>
+                
+                <div id = "wrapperMaskedWordcloud" style="display: none;">
+                    <img src="{{url_for('static', filename='img/infographics/bubblemaskedcolouredwordcloud.jpg')}}" alt="Generated Bubble Masked Wordcloud Image" width=1000 heigh=1000>
+                </div>
+
+                <div id = "wrapperMapVisualisation" style="display: none">
+                    <img src="{{url_for('static, filename='img/infographics/mapvisualisation.jpg')}}" alt="Generated World Map Visualisation">
+                </div>
+            </div>
+
+            <div>
+                <h3> Web Searched Query Scrapped Results: </h2>
+                <!-- <p> {{qr}} </p> -->
+                <p> Visit here to see the long list of <a href="#" title="Scrapped Webaddresses URL">scrapped URL web address links</a> 
+                    retrieved from your entered "{{q}}" search query </p>
+            </div>
+            
+            <div> 
+                    <h3> Extracted Data </h2>
+                    <p> Click here to see the <a href="#" title="Extracted Data">Extracted Webdata</a> </p> <!-- {{ed}}-->
+            </div>
+                
+            <div>      
+                <h3> Preprocessed Dataset using NLP </h3>
+                <!-- <p> {{ ppd }} </p> -->
+                <p> Click here to see the <a href="#" title="Preprocessed Data">Preprocessed Data from NLP operations</a> </p> <!-- {{ed}}-->
+        
+            </div>
+                
+            <div>
+                <h3> Named Entity Frequency Distribution </h3>
+                <!-- <p> {{ cef }} </p> -->
+                <p> Click here to see the <a href="#" title="List of NE Frequencies">List of NE Frequencies from Processed Dataset</a> </p> <!-- {{cef}}-->
+            </div>
+        </div>
+    </body>
+</html>
+
