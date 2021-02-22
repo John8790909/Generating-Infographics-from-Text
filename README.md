@@ -18,19 +18,19 @@ The app includes:
 ## :link: Prerequisite
 Operating Systems |
 | :---:
-  - [x] Microsoft Windows 10 ( _recommended_ )
+  - [x] Microsoft Windows 10 _(recommended)_
   - [x] Linux
   - [x] MacOS
 
 Web Browsers |
 | :---:
-  - [x] Google Chrome ( _highly recommended_ ) 
+  - [x] Google Chrome _(highly recommended)_ 
   - [x] Firefox
   - [x] Microsoft Edge
 
 Intergrated Development Environment (IDE) |
 | :---:
-   - [x] Any IDE's can be chosen (Visual Studio Code, IntelliJ IDEA, Atom, NetBeans etc)
+   - [x] Any IDE's can be chosen (Visual Studio Code, IntelliJ IDEA, Atom, NetBeans etc) 👍
 
 
 
