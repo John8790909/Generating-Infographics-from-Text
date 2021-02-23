@@ -30,7 +30,7 @@ Web Browsers |
 
 Intergrated Development Environment (IDE) |
 | :---:
-   - [x] Any IDE's can be chosen (Visual Studio Code, IntelliJ IDEA, Atom, NetBeans etc) 👍
+   - [x] _Yes, of course, any IDE's can be chosen_ 👍 (Visual Studio Code, IntelliJ, IDEA, Atom, NetBeans, Sublime etc)
 
 
 
