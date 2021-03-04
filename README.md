@@ -14,6 +14,8 @@ The app includes:
     * Providing 100 search queries to be used for free on the system per day
   * **Programmable Search Engine** (formerly known as Google Custom Search Engine / GCS & Google Co-op)
     * Manipulating information in web searches; refining and categorising queries of the user search input 
+  * **Google Cloud Speech-to-Text API**
+    * A Speech Recognition service incorporated, allowing user to speak to app through a microphone *(or something similar)* 
 
 ## :link: Prerequisite
 Operating Systems |
