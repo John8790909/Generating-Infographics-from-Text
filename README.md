@@ -2,7 +2,7 @@
 ~ ~ ~ Text-Mining Data-Visualisation Project ~ ~ ~
 
 
-An automated-based system that allow user(s) to enter a search query on an interactive form. This webscraps data from multiple URLs using  **Google Search Application Programming Interface** [(GS API)](https://github.com/googleapis/google-api-python-client "Click to see more info about GS API"), preprocesses the retrieved HTML pages into a **cleaned data** presentable format, applies **Natrual Language Processing** [(NLP)](https://en.wikipedia.org/wiki/Natural_language_processing "Click for more info in NLP") operations to the dataset and generates a visualised informational graphic (_a.k.a. "infographic"_) as the resulted output.
+An automated-based system, **InfoGen**, that allow user(s) to enter a search query on an interactive form. This webscraps data from multiple URLs using  **Google Search Application Programming Interface** [(GS API)](https://github.com/googleapis/google-api-python-client "Click to see more info about GS API"), preprocesses the retrieved HTML pages into a **cleaned data** presentable format, applies **Natrual Language Processing** [(NLP)](https://en.wikipedia.org/wiki/Natural_language_processing "Click for more info in NLP") operations to the dataset and generates a visualised informational graphic (_a.k.a. "infographic"_) as the resulted output.
 
 ## :page_facing_up: Description
 GIFT is scripted in the [Python](https://www.python.org/) programming language at the back-end server-side.
@@ -65,7 +65,7 @@ Before getting started with the project and interacting through the CLI (Command
 _#_ | Module Packages | Supported Version | Module Pip Commands | PyPI Repo
 | :---: | :---: | :---: | :---: | :---: |
  1  | [Flask](https://flask.palletsprojects.com/en/1.1.x/installation/#install-flask "To Flask website")  | v 1.0 + | `pip install Flask` | https://pypi.org/project/Flask/
- 2  | [Google Search API](https://github.com/googleapis/google-api-python-client "Official Google Search API GitHub repo")| v 1.12 |`pip install google-api-python-client`| https://pypi.org/project/google-api-python-client/
+ 2  | [* Google Search API](https://github.com/googleapis/google-api-python-client "Official Google Search API GitHub repo")| v 1.12 |`pip install google-api-python-client`| https://pypi.org/project/google-api-python-client/
  3  | [Requests](https://requests.readthedocs.io/en/master/user/install/ "Requests website") | v 2.25 +  | `pip install requests` | https://pypi.org/project/requests/
  4  | [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.html "BeautifulSoup site") | v 4.9 + | `pip install beautifulsoup4` | https://pypi.org/project/beautifulsoup4/
  5  | [Natural Lanaguge Toolkit](https://www.nltk.org/install.html "Official NLTK website") | v. 3.5+  | `pip install nltk` | https://pypi.org/project/nltk/
@@ -79,6 +79,7 @@ _#_ | Module Packages | Supported Version | Module Pip Commands | PyPI Repo
  
  * The [`wordcloud`](https://pypi.org/project/wordcloud/) module depends on: [`numpy`](https://numpy.org/install/) and [`pillow`](https://pillow.readthedocs.io/en/stable/installation.html) as well as [`matplotlib`](https://matplotlib.org/users/installing.html) 
 
+* * Google Search API - `pip install google`
 _For more information on these modules, please visit their respective websites by clicking on the hyperlinks_
 
 
