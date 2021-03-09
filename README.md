@@ -65,7 +65,7 @@ Before getting started with the project and interacting through the CLI (Command
 _#_ | Module Packages | Supported Version | Module Pip Commands | PyPI Repo
 | :---: | :---: | :---: | :---: | :---: |
  1  | [Flask](https://flask.palletsprojects.com/en/1.1.x/installation/#install-flask "To Flask website")  | v 1.0 + | `pip install Flask` | https://pypi.org/project/Flask/
- 2  | [* Google Search API](https://github.com/googleapis/google-api-python-client "Official Google Search API GitHub repo")| v 1.12 |`pip install google-api-python-client`| https://pypi.org/project/google-api-python-client/
+ 2  | [** Google Search API](https://github.com/googleapis/google-api-python-client "Official Google Search API GitHub repo")| v 1.12 |`pip install google-api-python-client`| https://pypi.org/project/google-api-python-client/
  3  | [Requests](https://requests.readthedocs.io/en/master/user/install/ "Requests website") | v 2.25 +  | `pip install requests` | https://pypi.org/project/requests/
  4  | [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.html "BeautifulSoup site") | v 4.9 + | `pip install beautifulsoup4` | https://pypi.org/project/beautifulsoup4/
  5  | [Natural Lanaguge Toolkit](https://www.nltk.org/install.html "Official NLTK website") | v. 3.5+  | `pip install nltk` | https://pypi.org/project/nltk/
@@ -79,7 +79,7 @@ _#_ | Module Packages | Supported Version | Module Pip Commands | PyPI Repo
  
  * The [`wordcloud`](https://pypi.org/project/wordcloud/) module depends on: [`numpy`](https://numpy.org/install/) and [`pillow`](https://pillow.readthedocs.io/en/stable/installation.html) as well as [`matplotlib`](https://matplotlib.org/users/installing.html) 
 
- * Alternative to Official Google Custom Search API:
+ * ** Alternative to Official Google Custom Search API:
    * [Google-Search-API *(by A.Casagrande, A.Benassi)*](https://pypi.org/project/Google-Search-API/) `pip install Google-Search-API` 
    * [Google *(by Mario Vilas)*](https://pypi.org/project/google/) `pip install google`
    * [Google-Search *(by Anthony Hseb)*](https://pypi.org/project/google-search/) `pip install google-search`
