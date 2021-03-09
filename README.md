@@ -80,10 +80,10 @@ _#_ | Module Packages | Supported Version | Module Pip Commands | PyPI Repo
  * The [`wordcloud`](https://pypi.org/project/wordcloud/) module depends on: [`numpy`](https://numpy.org/install/) and [`pillow`](https://pillow.readthedocs.io/en/stable/installation.html) as well as [`matplotlib`](https://matplotlib.org/users/installing.html) 
 
  * Alternative to Official Google Custom Search API:
-   * [Google-Search-API](https://pypi.org/project/Google-Search-API/) `pip install Google-Search-API` 
-   * [Google by Mario Vilas](https://pypi.org/project/google/) `pip install google`
-   * [Google-Search by Anthony Hseb](https://pypi.org/project/google-search/) `pip install google-search`
-   * [GoogleSearch-Python by  Nishant Vikramaditya](https://pypi.org/project/googlesearch-python/) `pip install googlesearch-python`
+   * [Google-Search-API *(by A.Casagrande, A.Benassi)*](https://pypi.org/project/Google-Search-API/) `pip install Google-Search-API` 
+   * [Google *(by Mario Vilas)*](https://pypi.org/project/google/) `pip install google`
+   * [Google-Search *(by Anthony Hseb)*](https://pypi.org/project/google-search/) `pip install google-search`
+   * [GoogleSearch-Python *(by Nishant Vikramaditya)*](https://pypi.org/project/googlesearch-python/) `pip install googlesearch-python`
 
 _For more information on these modules, please visit their respective websites by clicking on the hyperlinks_
 
