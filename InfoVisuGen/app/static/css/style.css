@@ -1,0 +1,777 @@
+/*-----------------------------------------------------------
+ * App's Stylesheet file | app/static/css/style.css
+ *----------------------------------------------------------- */
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box
+
+}
+
+/* Color Schemes */
+/* dark color: #5D4954
+medium: #5d49547b
+light-with-gradient: linear-gradient(180deg, #5d49540f, lightgrey) */
+
+/* Font typography */
+
+
+html, body {
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Darker Grotesque', sans-serif;
+  /* background-color: #ffffff; 
+  background-image: linear-gradient(to bottom right, white, grey);   */ /* Diagonal linear gradient */
+  overflow-x: hidden; /* Hide scrollbars */
+}
+
+body {
+  /* background-color: #5d49548e; */
+
+}
+/* Responsive background image */
+.bgHomePage {
+  height:100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/*----------------------------------------------------------- 
+ * Responsive layout - when the screen is less than 400px wide, 
+ * make the navigation links stack on top of each other instead of next to each other
+ *------------------------------------------------------------ */
+ @media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+
+/*------------------------------------
+ * Formatting the apps main home page 
+ *------------------------------------ */
+
+/* centering homepage's header h1 & h2 */ 
+/* .homeHeaderWrapper {
+  position: relative;
+  display: flex;                    /* Flexible length on flexible items */
+  /* align-items: center;              /* Vertical alignment of content */
+  /* justify-content: space-around;    /* Horizontal alignment */ 
+/* } */
+
+main.homeSectionContainer {
+  /* display: flex;                    /* Flexible length on flexible items */
+  padding: 1em;
+  position: absolute;
+  align-items: center;              /* Vertical alignment of content */
+  justify-content: space-around;    /* Horizontal alignment */  
+  text-align: center;
+
+  float: left;
+  border-radius: 1em;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%) }
+
+.homeHeaderWrapper {
+  padding: 15px;
+}  
+h1{
+  font-family: fantasy;
+  text-align: center;
+}
+
+h1.homeHeaderH1 {
+  color: lightgrey;
+  font-size: 3.125em;  /* 50 pixels */
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;  /* Border around header H1 */
+
+  /* text-shadow: 1px 1px 2px white, 
+                0 0 25px blue, 
+                0 0 5px darkblue; */
+  /* text-shadow:  1px 1px #ffffff, 
+                2px 2px  white, 
+                3px 3px #ffffff,
+                4px 4px darkgrey, 
+                5px 5px white, 
+                6px 6px darkgrey; */
+  transition: all 0.12s ease-out;
+}
+
+.homeHeadingSpan {
+  display: inline-block;
+}
+.homeHeadingSpan::first-letter {
+  color: darkgrey;
+}
+
+h1.homeHeaderH1:hover{
+  top: -3px;
+  left: -3px;
+  color: blue(255, 0, 0);
+  text-shadow: 1px 1px darkgrey, 
+               2px 2px darkgrey, 
+               3px 3px darkgrey, 
+               4px 4px darkgrey, 
+               5px 5px darkgrey, 
+               6px 6px darkgrey;
+}
+
+/* .homeHeaderH1 span {
+  font-family: cursive
+  position: relative;
+}
+
+.homeHeaderH1 span::after {
+  transform: scaleX(-1);
+} */
+
+
+
+/* div.index > header#indexHeader {
+    position: relative;
+    display: flex;                    /* Flexible length on flexible items
+    align-items: center;              Vertical alignment of content
+    justify-content: space-around;    Horizontal alignment 
+} */
+
+
+h2#homeSubheading {
+  color:rgb(182, 182, 182);
+  font-size: 1.25em;    /* 20 pixels */
+  font-family: monospace;
+  letter-spacing: 5px;
+  line-height: 1em;     /* Space above and below inline H2 subheading */
+  
+
+}
+
+#dateTimeDisplay {
+  letter-spacing: 1px;
+  color:rgb(182, 182, 182);
+}
+
+/*----------------------------
+ * Centering the body content
+ *---------------------------- */
+
+div.about-page-container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+div.about-page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+div.about-content-wrap {
+  padding-bottom: 2.5rem    /* Footer height */
+}
+
+
+
+/*InfoGen page container */
+
+.main-container {
+  padding: 50px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  background-color: #5d49547b;
+
+}
+
+/* Structures in a tabular grid's columns & rows */
+.grid-column {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 500px 500px 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+  ". text-mining text-mining ."
+  ". nlu-nlg nlu-nlg ."
+  ". nlu nlg ."
+  ". nlp-steps nlp-steps.";
+}
+.text-mining {
+  grid-area: text-mining;
+}
+
+.nlu-nlg {
+  grid-area: nlu-nlg;
+}
+.nlu {
+  grid-area: nlu;
+}
+.nlg {
+  grid-area: nlg;
+}
+.nlp-steps {
+  grid-area: nlp-steps;
+}
+
+
+/* div.index {
+    padding: 10px 0 30px 0;
+    background-color: #aeaeb1;
+    -webkit-border-radius: 6px;
+       -moz-border-radius: 6px;
+            border-radius: 6px;
+  } */
+/* div.about {
+    padding: 10px 0 30px 0;
+    background-color: #838385;
+    -webkit-border-radius: 6px;
+       -moz-border-radius: 6px;
+            border-radius: 6px;
+} */
+
+/*-------------------------------
+ * Navigation menu styles 
+ *------------------------------- */
+
+/* Navigation menu  */
+.home-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  /* background-color: #5D4954; */
+  padding: 45px;
+  width: 100%;
+}
+
+/* .logo-title {
+  color: rgb(226, 226, 226);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 	1.250em;
+
+
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  width: 40%;
+} */
+/* Navbar div wrapper */
+div.home-nav-wrapper {
+  /* margin-right: -50%;
+  transform: translate(-50%, -50%); */
+}
+
+ul.home-nav-bar {
+  display: flex;
+  width: 50%;   /* 5 equal-width links */
+}
+
+.home-nav-bar > li{
+  /* Add a gray right border to all list items, except the last item (last-child) */
+  border-right: 1px solid #bbb;
+  list-style-type: none;
+  padding: 15px;
+}
+.home-nav-bar li:last-child {
+  border-right: none;
+}
+
+
+/* Home Nav: Styles individual hyperlinks anchor */
+.home-nav-bar a{
+  text-decoration: none;    /* Removes underline in each anchor */
+  letter-spacing: 4px;
+  font-size: 0.8750em;
+  color: rgb(226, 226, 226);
+
+}
+  /* display: flex;                    /* Flexible length on flexible items */
+  /* align-items: center;              /* Vertical alignment of content */
+  /* justify-content: space-around;    /* Horizontal alignment */ 
+  /* width: 100%; */
+
+
+  /* display: flex;                    /* Flexible length on flexible items */
+  /* align-items: center;              /* Vertical alignment of content */
+  /* justify-content: space-around;    /* Horizontal alignment */ 
+
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  /transform: translate(-50%, -50%); */
+
+/* Navbar links */
+.home-nav-bar > a {
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition-property: all;   /* applies transition effect on "all" property */
+  transition-duration: 1s;
+}
+
+/* Links - change color on hover */
+.home-nav-bar a:hover {
+  color:rgb(182, 182, 182);
+  transition-timing-function: ease-in-out;    /* specifies speed curve of transition effect */
+  text-shadow:  1px 1px black,
+                2px 2px black, 
+                3px 3px black, 
+                4px 4px black, 
+                5px 5px black, 
+                6px 6px black;
+}
+
+a.active {
+  background-color: rgb(117, 114, 114);
+}
+
+
+
+
+
+/************************************
+/* All other pages' navigation menu */
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: #5D4954;
+  font-family: 'Darker Grotesque', sans-serif;
+}
+
+.logo-title {
+  color: rgb(226, 226, 226);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 	1.250em;
+}
+/* Navigation collective group */
+.nav-list {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+}
+
+.nav-list li {
+  list-style-type: none;
+}
+
+/* Navigation individual hyperlinks */
+.nav-list a{
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 0.8750em;
+  color: rgb(226, 226, 226);
+
+}
+.nav-burger{
+  display: none;
+  cursor: pointer;
+}
+.nav-burger div {
+  width: 25px;
+  height: 2px;
+  margin: 5px;
+  background-color: rgb(226, 226, 226);
+  transition: all 0.5s ease;
+}
+
+@media screen and (max-width:1024px){
+  .nav-list {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width:768px) {
+  body {
+    overflow-x: hidden;
+  }
+ .nav-list {
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 8vh;
+    background-color: #5D4954;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    transform: translate(100%); /* Shift the grouped nav-list away */
+    transition: transform 0.5s ease-in;
+
+ }
+ .nav-list li {
+   opacity: 0;
+ }
+ .nav-burger {
+   display: block;
+ }
+}
+
+.nav-active{
+  transform: translate(0%);
+}
+
+/* animation of navLinkFade */
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translate(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+/* 
+#footer-site-container {
+    background: black repeat;
+    border-top: solid 4px #ffffff;
+} */
+
+/* .footer-site-info {
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border-top: solid 1px #ddd;
+} */
+
+/* Footer */
+#footer-site-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  padding: 20px;
+  text-align: center;
+  background: rgb(0, 0, 0);
+}
+
+
+
+
+/*------------------------------------------------ 
+ * Styling UI form: input field and search button 
+ *------------------------------------------------ */ 
+
+ /* Set Form UI properties */
+.formInterfaceWrapper {
+  margin: 4em;
+  padding: 3.125em; /* 50px */
+  background-image: linear-gradient(180deg, darkgrey, lightgrey);    /* linear gradient with angle direction */
+  border-radius: 18px;
+} 
+
+/* Styles HTML Submit Search Button */
+#btnSearch {
+  padding: 0.9375em;
+  /* background: black; */
+  /* color: white; */
+  border: 1px solid grey;
+  border-radius: 38px;
+  cursor: pointer;
+}
+
+#btnSearch:hover {
+  background: lightgrey;
+}
+
+#searchInput {
+  font-size: 50;
+  text-align: "center";
+}
+
+/* label field inside txtbox and label wrapper */
+.floating-field, .query-search-wrapper {
+  position: relative;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+
+}
+
+/* floating label and label wrapper */
+.label-search-input, .query-search-wrapper {
+  position: relative;
+}
+
+/* element state */
+
+/* label field focus PLUS floating label */
+.floating-label-field-drift:focus + .label-search-input, 
+.floating-label-field-drift:not(:placeholder-shown) + .label-search-input {
+  z-index:2500;
+  padding: .75em;
+  transform: translate(0, -2em) scale(.9);
+  color: rgba(255,255,255, .25); 
+  /* background-color: #2c3e50; */
+}
+
+
+
+/* .floating-label-field-drfit:focus, .floating-label-field-drift:not(:placeholder-shown) {
+  border-color: rgba(255,255,255,.1);
+} */
+
+.floating-field:focus {
+  outline: 0;
+}
+
+
+.floating-label-field-drfit:not(textarea) {
+  max-height: 4em;
+}
+
+
+/* Selects the floating label that gets placed immediately after drifted label (but not inside of this element!) */
+.floating-label-field-drift + .label-search-input {
+  position: absolute;
+  top: .75em;
+  left: .75em;
+  display: inline-block;
+  width: auto;
+  margin: 0;
+  padding: .75em;
+  transition: transform .25s, opacity .25s, padding .25s ease-in-out;
+  transform-origin: 0 0;
+}
+
+/* Styles the search input field box */
+.floating-label-field-drift {
+  padding: 1.5em;                             /* Adds space inside the box */
+  transition: border-color .25s ease-in-out;
+  color: rgba(255,255,255, .75);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+/* both the floating label and the label field */
+.label-search-input, .floating-field {
+  font: inherit;
+  line-height: 1;
+  /* display: block;
+  width: 100%; */
+}
+
+/* Additional label */
+.label-search-input {
+  /* position: absolute;
+  top: 0;
+  left: 0;
+  z-index:1500; */
+  user-select: none;
+}
+
+/* Places the floated labelled text on the edge of the search box */
+.floating-field {
+  z-index: 2000;
+}
+
+input {
+  -webkit-writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  text-align: start;
+  appearance: textfield;
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+  margin: 0em;
+}	
+
+/* .searchInput {
+  appearance: textfield;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  
+  float: left;
+  font-size: 12px;
+  padding: 2.5em;   // 40px
+  border: 1px solid #383838;
+  border-radius: 38px;
+  cursor: text;
+  color: black;
+  opacity: 0.9;
+} */
+input:focus {
+  outline-offset: 0px;
+}
+
+
+.searchInput:hover {
+  box-shadow: 2px 2px 2px 2px  #888888;
+  border-color: black;
+  text-shadow: 0.5px 0.5px rgb(117, 114, 114);
+  opacity: 1.0;
+}
+/* .searchInput:focus {
+  outline: -webkit-focus-ring-color auto 1px;
+  outline-color: -webkit-focus-ring-color;
+  outline-style: auto;
+  outline-width: 1px; 
+} */
+.searchInput:focus {
+  outline: none;
+  border-width: 2px;
+  border-color: black; 
+}
+
+
+/* .query-search-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:1.25em;
+  position: relative;
+
+} */
+
+
+/* .searchInput[type] {
+  font-weight: 600;
+  height: 48px;
+}
+input[type="search"] {
+  font-size: 1.4rem;
+  line-height: 1.42857;
+  transition-duration: 334ms;
+
+} */
+/* .searchInputLabel {
+  font-size: 1.8rem;
+  line-height: 1.33333;
+  font-weight: 400;
+}
+.searchInputLabel:focus {
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  transition: all 300ms;
+} */
+
+/* input[type="search" i] {
+  appearance: searchfield;
+  box-sizing: border-box;
+} */
+
+
+
+
+/* .lblsearchInput {
+  float: left;
+  width: 100%;
+  cursor: pointer;
+}*/
+
+/**********************************************
+ * Sets Style to Additional "btnGenerators"
+ ***********************************************/
+
+.btnGenWrapper {
+  /* float: left; floats buttons side by side */
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnGenerators {
+  float: left;
+  font-size: 12px;
+  height: 50px;
+  padding: 10px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 18px;
+  margin: 1em;
+  cursor: pointer;
+}
+
+.btnGenerators:hover {
+  background:lightgrey;
+  color: white;
+  cursor: not-allowed;
+}
+
+/* Loading Spinner Icon */
+#spinnerIcon {
+  visibility: hidden;
+  width: 80px;
+  height: 80px;
+
+  border: 2px solid #f3f3f3;
+  border-top: 3px solid #000000;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: roatate(0deg);
+  } to {
+    transform: rotate(360deg);
+  }
+}
+#spinnerIcon.show {
+  visibility: visible;
+}
+
+
+#spinnerScreen {
+  visibility: hidden;
+  height: 100%;
+  width: 100%;
+  z-index: 998vh;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+  background-color: rgb(140, 189, 126)
+}
+
+#spinnerScreen.show {
+  visibility: visible;
+}
+
+/*
+Extra smnall (es) devices (potrait phones, less than 576px) 
+No media query since this is the default in Boostrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (mid-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { .. }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+*/
