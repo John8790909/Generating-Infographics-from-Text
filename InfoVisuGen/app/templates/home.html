@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang = en> 
+    <head>
+        <!-- Metadata -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equip="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="Infographics Generation">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" href="../static/css/style.css">
+        <link rel = "icon" href="{{ url_for('static', filename='img/title-logo.jpg')}} ">
+        <!-- <script src="{{url_for('static', filename='js/app.js')}}"></script> -->
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>        
+        <script src="{{url_for('static', filename='js/clock.js')}}"> </script>
+        <script>
+            function updateClock() {
+                updateClockEN("day", "date", "time");
+            }
+        </script>
+        
+        <script>
+            setInterval(updateClock, 1000);
+        </script>
+
+        <title> GIFT | Homepage </title>
+        <!-- <style>
+            .homeHeaderH1 span::before, 
+            .homeHeaderH1 span::after{
+                vertical-align: middle;
+                display: inline-block;
+                content: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/squiggle.svg');
+                background-color: white;
+            }
+
+        </style> -->
+    </head>
+
+    <body>
+        <!--header container -->
+        <main class = "homeSectionContainer">
+                <!-- header wrapper -->
+                <div class = "homeHeaderWrapper">
+                    <!-- header h1 title -->
+                    <h1 class = "homeHeaderH1" title = "Website Homepage Title">
+                        <span class="homeHeadingSpan">Generating</span>
+                        <span class="homeHeadingSpan">Infographic</span>
+                        <span class="homeHeadingSpan">for</span>
+                        <span class="homeHeadingSpan">Text</span></h1><br>
+                    <!-- header h2 subheading -->
+                    <h2 id = homeSubheading title="~ Query &#9830; Extract &#9830; Visualise ~">
+                        ~ Query &#9830; Extract &#9830; Visualise ~</h2>
+                    <!-- <img src = "static/img/title-logo.jpg" id="imgLogo" alt ="Website Logo" style="width: 300px;height:75px"> -->
+                </div>
+
+               <!-- <p> Greetings there! Welcome to the Home page! </p> 
+                
+                <h1> Infographic Visualisation Generator </h1>
+                <h3> Search. Visualise. Save. </h3>
+            
+            
+                -->
+
+            <topnav class="home-nav">
+                <!--Navigation bar -->
+                <div class="home-nav-wrapper">
+                    <ul class="home-nav-bar">
+                        <!-- Navigation linked buttons -->
+                        <li class="home-nav-link"><a href="{{ url_for('home') }}" title="Home"><i class="fa fa-fw fa-home"></i> Home</a></li>
+                        <li class="home-nav-link"><a href="{{ url_for('about') }}" title="About"><i class="fa fa-info-circle"></i>About</a></li>
+                        <li class="home-nav-link"><a href="{{ url_for('generator') }}" title="Generator"><i class="fa fa-line-chart"></i>Generator</a></li>
+                        <li class="home-nav-link"><a href="{{url_for('nlp')}}" title="Natural Language Processing"> <i class="fas">&#xf085;</i> NLP</a></li>
+
+
+                        <!-- Dropdown Menu -->
+                        <!-- <div class = "dropdownmenu">
+                            <li><a href="system-techs" title="System Automation & Technology">Systems Automation & Technology</a></li>
+                        
+                        </div>  -->  
+                        
+                       <!-- <li class="home-nav-link"><a href="{{ url_for('futurework') }}" title="Futurework">Futurework</a></li> -->
+                    </ul>
+                </div>
+            </topnav>
+
+            <div id = "dateTimeDisplay">
+                <p id="day"> Monday </p>
+                <p id="date"> March 1st, 2021</p>
+                <p id="time"> 12:45:30 </p>
+            </div>	               
+
+        </main>
+
+        <!-- Homepage background image -->
+        <div class = "bgHomePage" style="background:url('/static/img/bg-animated-coloured-sized-shapes.gif') center / cover no-repeat;">
+            <!-- <img src = "/static/img/bg-animated-coloured-lines.gif"> -->
+        </div>
+    </body>
+</html>
+
+<!-- {% extends "layout.html" %}
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+<h1> Welcome to thw Home page! </h1>
+<h2> Generating Infographics from Text </h2>
+<p> This website was built with Python via the Flask framework.</p>
+{% endblock %} -->

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equip="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel = "icon" href="{{ url_for('static', filename='img/title-logo.jpg')}} ">
+        <title> GIFT | About </title>
+
+    </head>
+
+    <body>
+        <!-- Navigation bar -->
+		<nav>
+			<div class="logo-title">
+				<h4> GIFT </h4> 
+			</div>
+
+			<ul class="nav-list">
+				<li> <a href="#" title="Home"> Home </a></li>
+				<li> <a href ="{{ url_for('about') }}" title="About"> About </a> </li>
+				<li> <a href="{{ url_for('generator') }}" title="InfoGen">InfoGen</a> </li>
+				<li> <a href="{{url_for('nlp')}}" title="Natural Language Processing">NLP</a></li>
+			</ul>
+			<div class="nav-burger">
+				<div class="line1"></div>
+				<div class="line2"></div>
+				<div class="line3"></div>
+			</div>
+		</nav>
+
+        <div class="about">
+            <h1> About </h1>
+            <p> This is a text-oriented, language-processing web application <p>
+            <p> The website is built with Python programming language with the backend of Flask framework, 
+                marked up in HTML, CSS and scripted in JavaScript.</p> <br>
+            
+            <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
+                occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat.
+              </p> <br>
+        </div>
+        
+        <div id = "about-page-container" >
+            <div id = "about-content-wrap">
+                <ul class = "list-project-process"></ul>
+                    <li> Research </li>
+                    <p> - </p>
+                    <br>
+
+                    <li> Investigation </li>
+                    <p> - </p>
+                    <br>
+                    
+                    <li> Design Depiction </li>
+                    <p> - </p>
+                    <br>
+
+                    <li> Development Implemention </li>
+                    <p> - </p>
+                    <br>
+                    
+                    <li> Analysis of Testing </li>
+                    <p>- </p>
+                    <br>
+
+                    <li> Project Evaluation </li>
+                    <p> - </p>
+                    <br>
+                </ul>
+            </div>
+        </div>
+
+
+
+        <footer id="footer-site-container" class="footer-site" role="contentinfo">
+            <div class="footer-site-info">
+                <a href="#"> | Privacy Policy | </a>
+                <a href="#"> Terms of Service </a>
+            </div>
+    </footer>
+    </body>
+</html>

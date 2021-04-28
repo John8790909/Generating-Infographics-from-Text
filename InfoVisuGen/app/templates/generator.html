@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang = en>
+	<head>
+		<!--- Metadata -->
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equip="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="../static/css/style.css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+		<link rel = "icon" href="{{ url_for('static', filename='img/title-logo.jpg')}} ">
+		<title> GIFT | Info Generation </title>
+		<!-- {% with messages = get_flashed_messages() %}
+			{% if messages %}
+				<ul class=flashes>
+				{% for message in messages %}
+					<li>{{ message }}</li>
+				{% endfor %}
+				</ul>
+			{% endif %}
+		{% endwith %}
+		{% block body %}{% endblock %} -->
+	</head>
+	
+    <body>
+		<!-- Navigation bar -->
+		<nav>
+			<div class="logo-title">
+				<h4> GIFT </h4> 
+			</div>
+
+			<ul class="nav-list">
+				<li> <a href="#" title="Home"> Home </a></li>
+				<li> <a href ="{{ url_for('about') }}" title="About"> About </a> </li>
+				<li> <a href="{{ url_for('generator') }}" title="Generator">Generator</a> </li>
+				<li> <a href="{{url_for('nlp')}}" title="Natural Language Processing">NLP</a></li>
+			</ul>
+			<div class="nav-burger">
+				<div class="line1"></div>
+				<div class="line2"></div>
+				<div class="line3"></div>
+			</div>
+		</nav>
+
+		<!-- InfoGen page header -->
+		<header>
+        	<div class="main-container">
+				<h1 class="infogen" title="Infographics Generation"> InfoVisuGen's Search Engine Generator </h1>
+				<p> Don't delay, submit any text right away! What's stopping you?! </p>
+				<p>	See your text manipulated in a transformed graphical visualisation! See the fusion!	</p>
+				<p>	Simply enter a query in the input field below and hit the search submit button! </p>
+				<p>	For More information on Machine Learning (ML), Data Science (DS) including text-analysis/text-mining/NLP, click here	</p>
+				<p style="text-align: center"> For More information on text-analysis and text-mining, click <a href="{{ url_for('nlp') }}" title="directs you to NLP page">here</a></p>
+			</div>
+		</header>
+
+		<!-- UI form with input text field and search button (symbolised with its icon) -->
+		<form class="formInterfaceWrapper" role="form" id="frmSearchQuery" method='POST'>
+			<div class="text-input--floating">
+				<div class = "query-search-wrapper">
+					<label for="searchInput" class="label-search-input" alt="Search">~ ~ ~ Query your search here ~ ~ ~</label>
+
+					<input type="search" name="searchInput" id="searchInput" class="floating-field floating-label-field-drift" 
+						placeholder=" " alt="Search input box" required/>
+					
+					<button type="submit" id="btnSearch" alt="Search button" onclick="showRetrieval()"><i class="fa fa-search"></i></button>
+				</div>
+				
+				<!-- Wrapper for the Dropdownlist consisting infographic generation options -->
+				<div class = "dropdownGenerationOptions">
+					<label fo="infographic-options"> Select an Infographic Generation: </label>
+					<select id="infographic-options"> 
+						<option value="wordcloud" name="wordcloud" id="optionWorldcloud" onclick="checkOptionClick()">Wordcloud</option>
+						<option value="worldmap" name="worldmap" id="optionWorldmap" onclick="checkOptionClick()">Worldmap</option>
+						<option value="timeline" name="timeline">Timeline</option>
+						<option value="emptyOption" selected>-</option>
+					</select>
+				</div>
+
+
+				<div class = "btnGenWrapper"> 
+					<button type="button" class="btnGenerators" id="btnGenWordcloud" onclick="generateWordcloud()" 
+						alt="Generate Wordcloud"> Generate Wordcloud </button>
+					<button type="button" class="btnGenerators" id="btnGenMapVisualisation" onclick="generateMapVisual()"
+						alt="Generate Map Visualisation"> Generate Map Visualisation </button>
+					<button type="button" class="btnGenerators" id="btnGenTimeline" onclick="generateTimeline()" 
+						alt="Generate Timeline"> Generate Timeline </button>
+				</div>
+			</div>
+		</form>
+		
+
+
+		<div>
+			<button type="button" class="btnGenerate" id="btnGenerateWorldmap" onclick="generateWorldmap()" alt="Generate Worldmap"> Generate </button>
+		</div>
+
+		<button type="button" class="btnGenerators" id="btnGenStyledWordcloud" onclick="generateStyledWordcloud()" alt="Generate Styled Wordcloud"> Generate Styled Wordcloud </button>
+
+
+
+
+		<div id="wrapperWordcloud" style="display: none;">
+            <img src="{{url_for('static', filename='img/infographics/wordcloud.jpg')}}" alt="Generated Wordcloud Image" width=100 height=100>
+        </div>
+
+		<div id="wrapperTimeline" style="display: none;">
+			<img src="{{url_for('static', filename='img/infographics/timeline.jpg')}}" alt="Generated Timeline Image" width=100 height=100> 
+		</div>
+		
+		<!-- <div id="wrapperWorldmap" style="display: none;">
+			<img src="{{url_for('/', filename='worldmap-visual.html)}}" alt="Generated Worldmap Visualisation">
+			<iframe src="worldmap-visual.html" height="200" width="300" title="Generated Worldmap Visualisation"></iframe>
+		</div> -->
+		
+		<!-- Loading Icon Spinner -->
+		<div id="spinnerScreen"> 
+			<div id ="spinnerIcon"></div>
+		</div> 
+		
+		<!-- <div id="dialogue-display">
+
+		</div> -->
+
+		<script src="{{url_for('static', filename='js/app.js')}}"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+	</body>
+</html>
+        <!-- <div id = "wrapperMaskedWordcloud" style="display: none;">
+        	<img src="{{url_for('static', filename='img/infographics/bubblemaskedcolouredwordcloud.jpg')}}" alt="Generated Bubble Masked Wordcloud Image" width=1000 height=1000>
+        </div>
+
+        <div id = "wrapperMapVisualisation" style="display: none">
+        	<img src="{{url_for('static', filename='img/infographics/mapvisualisation.jpg')}}" alt="Generated World Map Visualisation">
+        </div> -->
+
+		<!-- {{ url_for('searchresults') }}"-->
+			<!-- {% for error in errors %}
+				<h4> {{ error }} </h4>
+			{% endfor %} -->
+		
+        <!-- <footer id="footer-site-container" class="footer-site" role="contentinfo">
+            <div class="footer-site-info">
+                <a href="#"> | Privacy Policy | </a>
+                <a href="#"> Terms of Service </a>
+            </div>
+		</footer> -->
+		
+		<!-- <script src = 'js/app.js'></script> -->
+		<!-- Bootstrap Bundle with Popper -->
