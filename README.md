@@ -71,7 +71,8 @@ _#_ | Module Packages | Supported Version | Module Pip Commands | PyPI Repo
  6  | [WordCloud](https://amueller.github.io/word_cloud/https://pypi.org/project/wordcloud/ "WordCloud") | v. 1.8 | `pip install wordcloud`| https://pypi.org/project/wordcloud/
  7  | [Matplotlib](https://matplotlib.org/) | v 3.3 | `pip install matplotlib` | https://pypi.org/project/matplotlib/
  8  | [NumPy](https://numpy.org/) | | `pip install numpy` | https://pypi.org/project/numpy/
- 8  | [SciPy](https://www.scipy.org/) | | `pip install scipy` | https://pypi.org/project/scipy/
+ 9  | [SciPy](https://www.scipy.org/) | | `pip install scipy` | https://pypi.org/project/scipy/
+ 10 | [Folium](https://python-visualization.github.io/folium/) | | `pip install folium` | https://pypi.org/project/folium/
 
 ## :grey_exclamation: Notes
  * Both [`Python`](https://www.python.org/downloads/) and [`pip`](https://packaging.python.org/tutorials/installing-packages/) packages must be pre-installed too - [`Python 3.4+`](https://www.python.org/downloads/release/python-340/) by default comes with the **pip install manager**
