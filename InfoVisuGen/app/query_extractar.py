@@ -9,17 +9,15 @@ import requests
 import collections
 import pandas as pd
 import content_checker
-from content_checker import extract_url, refine_text
 
+from content_checker import extract_url, refine_text
 from bs4 import BeautifulSoup
 from googlesearch import search as gsearch
-from countryinfo import CountryInfo
 from spacy import displacy
-# from textblob import TextBlob
 
 
 ''' Returns a string list of URLs based on a given search query '''
-def getQueryResults(query, tld="com", lang="en", num_results=1, pause=2):
+def get_query_results(query, tld="com", lang="en", num_results=1, pause=2):
     query_results = []
     for url in gsearch(query, tld=tld, lang=lang, num=num_results, stop=num_results, pause=pause):
         query_results.append(url)
@@ -29,7 +27,7 @@ def getQueryResults(query, tld="com", lang="en", num_results=1, pause=2):
     return query_results
 
 ''' Returns list of collected content from URLs that are saved in queryResults'''
-def extractWebData(query_results):
+def extract_web_data(query_results):
     extracted_data = []
     
     for result in query_results:
@@ -43,10 +41,9 @@ def extractWebData(query_results):
 
     return extracted_data
 
-## with spacy
 
 ''' Converts extracted web data into a processed SpaCy Doc object '''
-def preprocessRawText(extracted_data):
+def preprocess_raw_text(extracted_data):
     nlp = spacy.load("en_core_web_sm")
 
     for data in extracted_data:
@@ -88,32 +85,13 @@ def locate_named_entities(tokenised_words):
     
     return named_entities
 
-## with nltk
-#def preprocess(extracted_data):
-#    for data in extracted_data:
-#        meep = idekanymore.make_right(data)
-#        token = nltk.word_tokenize(meep)
-#        stopwords = set(nltk.corpus.stopwords.words("english"))
-#        refined_words = [ word for word in token if word not in stopwords ]
-#        tagged_pos = nltk.pos_tag(refined_words)
-#        entity = nltk.tree2conlltags(nltk.ne_chunk(tagged_pos))
-#        print(nltk.conlltags2tree(entity))
-#        
-#    return "blah"
+''' Counts up the frequency from a nested list of string named entities (indexed in the first position of each grouped sublist) '''
+def contruct_ne_freq_dict(named_entities):
+    ne_freq = collections.Counter(ne[0] for ne in named_entities)
+    return ne_freq
 
+''' Obtains the top most frequent named entities in the named entity frequency dict (ne_freq) '''
+def get_top_freq_entities(ne_freq):
+    frequent_entities = sorted(ne_freq.items(), key=lambda t: t[1], reverse=True)[:6]
+    return frequent_entities
 
-# def assignTokenTaggings(refinedWords):
-#   return named_entities
-
-
-
-
-
-# def recognise(entities):
-#     named_entities = []
-#     for chunk in entities:
-#         current_chunk = " ".join([token for token, tagged_pos in chunk.leaves()])
-#         if current_chunk not in named_entities:
-#             named_entities.append(current_chunk)
-
-    #print(f"Recognition of Named Entities (NER) with length {len(named_entities)}:\n\n{named_entities}")

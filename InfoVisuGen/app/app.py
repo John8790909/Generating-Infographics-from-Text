@@ -104,22 +104,16 @@ and a Wordcloud visual, of varying word size, is then propoerly generated '''
 
 def run_wordcloud_operations(query):
 
-    # passes in a temporary blank image file
-    tmpimg_wc = 'wordcloud.jpg'  
+    query_results = query_extractar.get_query_results(query, num_results=1, pause=2)
+    extracted_data = query_extractar.extract_web_data(query_results)
+    preprocessed_data = query_extractar.preprocess_raw_text(extracted_data)
+    named_entities = query_extractar.locate_named_entities(preprocessed_data)
+    named_entities_freq = query_extractar.contruct_ne_freq_dict(named_entities)
+    top_freq_elements = query_extractar.get_top_freq_entities(named_entities_freq)
 
-    # instantiates class instance objects
-    qe = QueryExtractor()
+    tmpimg_wc = 'wordcloud.jpg'             # passes in a temporary blank image file
     wcg = WordcloudGenerator()
-
-    query_results = qe.get_query_results(query)
-    extracted_data = qe.extract_webdata()
-    preprocessed_data = qe.preprocess_textdata()
-    classified_tokens = qe.classify_tokens()
-    counted_entities_frequency = qe.count_entities_frequency()
-    top_frequent_elements = qe.get_top_frequent_elements()
-    merged_entity_wikitext = qe.merge_entities_wikitext()
-    constructed_entities_dataframe = qe.construct_entities_dataframe()
-    wcg.generate_simple_wordcloud(tmpimg_wc, counted_entities_frequency)
+    wcg.generate_simple_wordcloud(tmpimg_wc, named_entities_freq)
 
     return redirect(url_for('generator'))
 
@@ -137,10 +131,10 @@ def run_worldmap_operations(query):
     preprocessed_data = query_extractar.preprocessRawText(extracted_data)
     located_named_entity = query_extractar.locate_named_entities(preprocessed_data)
 
-    mv.showCountries()
-    recoupedCountries = mv.checkCountries(located_named_entity)
-    countriesDataframe = mv.createCountriesDataframe(recoupedCountries)
-    countriesContinent = mv.getContinent(countriesDataframe)
+    mv.show_countries()
+    recoupedCountries = mv.check_countries(located_named_entity)
+    countriesDataframe = mv.create_countries_dataframe(recoupedCountries)
+    countriesContinent = mv.get_continent(countriesDataframe)
     countriesLongLat = mv.geolocate(countriesContinent)
     mv.generate_worldmap(countriesLongLat)
 

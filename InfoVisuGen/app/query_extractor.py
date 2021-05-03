@@ -37,9 +37,9 @@ STATIC_DIR = os.path.join(APP_DIR, 'static')
 IMG_DIR = os.path.join(STATIC_DIR, 'img')                  # sets nested "img" folder path
 INFOGRAPHICS_DIR = os.path.join(IMG_DIR, 'infographics')     # creates folder named "infographics"
 
-""" StanfordTagger = StanfordNERTagger('stanford-ner-2018-10-16/classifiers/english.muc.7class.distsim.crf.ser.gz',
+''' StanfordTagger = StanfordNERTagger('stanford-ner-2018-10-16/classifiers/english.muc.7class.distsim.crf.ser.gz',
                                     'stanford-ner-2018-10-16/stanford-ner.jar',
-                                    encoding='utf-8')  """
+                                    encoding='utf-8') '''
 
 class QueryExtractor():
 
@@ -76,7 +76,7 @@ class QueryExtractor():
     def get_query_results(self, query):
 
         # retrieve the first 10 results from the 'gsearch' execution
-        for link in gsearch(query, tld="com", lang="en", num=10, stop=10, pause=2):
+        for link in gsearch(query, tld="com", lang="en", num=0, stop=3, pause=2):
             
             # for each iteration a link gets appended to a class member list, queryResults
             self.query_results.append(link)
@@ -148,11 +148,18 @@ class QueryExtractor():
         self.tagged_pos = pos_tag(self.refinedWords) 
         print("\n>>> ", (type(self.tagged_pos), self.tagged_pos, "\n"))
 
-        classified_text = StanfordTagger.tag(self.refinedWords)
+        # classified_text = StanfordTagger.tag(self.refinedWords)
         self.entities = ne_chunk(self.tagged_pos, binary=True)
         print(type(self.entities))
         return self.entities
     
+    ''' Counts up the frequency from a list of string named entities (indexed in the first position of each grouped tuple)'''
+    def count_entities_frequency(self):
+        self.ne_freq_dict = Counter(i[0] for i in self.entities)
+        # pprint(self.ne_freq_dict)
+        return self.ne_freq_dict
+
+
     """ def get_parts_of_speech_tag(self):
         return self.tagged_pos
 
@@ -180,10 +187,10 @@ class QueryExtractor():
             
             return self.tagged_iob
         
-        def get_tagged_iob(self):
+     def get_tagged_iob(self):
             return self.tagged_iob
         
-        def set_tree(self):
+    def set_tree(self):
             tagged_pos = self.get_parts_of_speech_tag()
             tagged_iob = self.get_tagged_iob()
 
@@ -194,7 +201,7 @@ class QueryExtractor():
             ne_tree = conlltags2tree(colltags)
             return ne_tree
         
-        def structure_named_entity(self):
+    def structure_named_entity(self):
             ne = []
             neo = []
 
@@ -252,11 +259,7 @@ class QueryExtractor():
 
             print(f'\n>>> Named Entity Recognition (NER) with length {len(self.named_entities)}: \n{self.named_entities}\n\n') """
 
-    ''' Counts up the frequency from a list of string named entities (indexed in the first position of each grouped tuple) '''
-    def count_entities_frequency(self):
-        self.ne_freq_dict = Counter(i[0] for i in self.entities)
-        # pprint(self.ne_freq_dict)
-        return self.ne_freq_dict
+  
     
     ''' Obtains the highest entity from the dict using its max value '''
     def get_frequent_entity(self):
@@ -275,214 +278,3 @@ class QueryExtractor():
     def get_top_frequent_elements(self):
         self.top_frequent_entities = sorted(self.ne_freq_dict.items(), key=lambda t: t[1], reverse=True)[:6]
         return (self.top_frequent_entities)
-        
-    # ''' Returns a long dictionary items with nested list of string entities, integer frequencies and string wikitext'''
-    # def merge_entity_wikitext(self):
-
-    #     for i in self.top_frequent_entities:
-    #         # content of entity, frequency, wikitext gets stored into each specified position in dict 
-    #         # self.merged_wikitext_dict[i[0]] = wikipedia.summary((i), sentences=2)
-    #         self.merged_wikitext_dict['Entities'].append(i[0])
-    #         self.merged_wikitext_dict['Frequencies'].append(i[1])
-    #         self.merged_wikitext_dict['Wikitext'].append(wikipedia.summary((i[0]), sentences=2))
-        
-    #     return (self.merged_wikitext_dict)
-    
-
-    ''' TF-IDF measures frequency of word in document & the inverse importance of document frequency in whole set of corpus '''
-    """  def computes_tfidf_graph(self):
-        # t = term(word); d = document(set of words); n = count of corpus
-        # corpus = total document set
-        # tf = frequency counter for term T in document D
-        # df = count of occurences of term T in document set N
-        
-        term_freq = 0             # number of times term T appears in document 
-        total_terms_in_doc = 0    # total number of terms in document
-        total_num_doc = 1
-        inv_doc_freq = 0          # number of documents with term T in it 
-        N = 0                      # total number of corpora
-
-        tfidf = {}
-        tokens = self.get_tokens()
-        tokens_set = set(tokens)
-        for word in tokens_set:
-            tf = float(tokens.count(word)) / len(tokens_set)
-            idf = math.log(float(1 + total_num_doc))                  
-            tfidf[word] = tf * idf
-
-        return sorted(tfidf.items(), key=itemgetter(1), reverse=True) """
-
-    ''' Returns a long dictionary items with nested list of string entities, integer frequencies and string wikitext'''
-    def merge_entities_wikitext(self):
-        
-        print(">>> Top Frequent Entities: ", self.top_frequent_entities)
-        
-        # content of entity, frequency, wikitext gets stored into each specified position in dict 
-        # catches & handles the exception encountered in the try-clause
-        for i in self.top_frequent_entities:
-            try:  
-                self.merged_wikitext_dict['Entities'].append(i[0])
-                self.merged_wikitext_dict['Frequencies'].append(i[1])
-                self.merged_wikitext_dict['Wikitext'].append(wikipedia.summary((i[0]), sentences=1))
-            
-            except wikipedia.exceptions.DisambiguationError as error:
-                self.merged_wikitext_dict['Wikitext'].append(error.options[0])
-        
-        return self.merged_wikitext_dict
-
-     # self.merged_wikitext_dict[i[0]] = wikipedia.summary((i), sentences=2)
-
-    ''' Returns a Pandas dataframe generated from data stored in a dictionary '''
-    # def build_entities_dataframe(self):
-    #     data = self.merged_wikitext_dict
-    #     self.entities_dataframe = pd.DataFrame.from_dict(data, columns = ['Entities', 'Frequency', 'Wikitext'])
-    #     return (self.entities_dataframe) 
-
-    ''' Returns a contructed dataframe consisting of entities, wikitext, and etymologies '''
-    # def construct_etymology_merge(self):
-    #     for row in range(len(self.entities_dataframe)) :
-    #         # print(self.entities_dataframe.iloc[row, 0])
-        
-    #         # stores each row onto a new column
-    #         # retrieves origins of each row indexed in the first "entities" column
-    #         self.entities_dataframe.append( { 'Etymologies': ety.origins(self.entities_dataframe.iloc[row,0]) })
-        
-    #     return (self.entities_dataframe)
-
-    ''' Returns a contructed Pandas dataframe consisting of entities, frequency, wikitext, and etymologies '''
-    def construct_entities_dataframe(self):
-        items = self.merged_wikitext_dict
-        
-        etymology_word = []
-        etymology_lang = []
-        
-        for entity in self.merged_wikitext_dict['Entities']:
-            try:
-                origins = ety.origins(entity)
-                origin = origins[0]
-                originated_word = origin.word
-                originated_lang = origin.language
-                etymology_word.append(originated_word)
-                etymology_lang.append(originated_lang)
-            
-            except IndexError:
-                origins = entity
-                originated_word = origins
-                originated_lang = "English"
-                etymology_word.append(originated_word)
-                etymology_lang.append(originated_lang)
-
-        # transfers specified dictionary items into the empty dataframe object
-        for entities, frequencies, wikitext in zip(items['Entities'], items['Frequencies'], items['Wikitext']):
-            self.entities_dataframe = self.entities_dataframe.append({ 
-                                            'Entities': entities,
-                                            'Frequencies': frequencies,
-                                            'Wikitext': wikitext,
-                                            'EtymologyWord': etymology_word,
-                                            'EtymologyLang': etymology_lang}, ignore_index=True)
-        # print(self.entities_dataframe.head())
-
-        # for row in range(len(self.entities_dataframe)) :
-        #     origins = ety.origins(self.entities_dataframe.iloc[row,0])
-                        
-        #     # check if length of a list is equal to zero 
-        #     # if len(variable) == 0:
-        #     if not origins :
-        #         print("List is empty")
-
-        #     if origins:
-        #         print(type(origins))
-        #         if (len(origins) > 0):
-        #             # add data from variable to the dataframe
-        #             origin = origins[0].word
-        #         else:
-        #             origin = 1
-
-        #         # appends "origins" of each row's "entities" (indexed at '0') to a newly created column "Etymologies"
-        #         self.entities_dataframe = self.entities_dataframe.append({'Etymologies' : origin}, ignore_index=True)
-        #         df.
-        
-        print(self.entities_dataframe.head())
-        return (self.entities_dataframe)  
-
-    # self.entities_dataframe['Etymologies'][row] = ety.origins(self.entities_dataframe.iloc[row,0])
-
-
-
-    '''  Generates a visual timeline figure, rendering that image from items contained in a dataframe '''
-    """   def plot_timeline(self, tmpimg):
-        # plot df values
-        df = self.entities_dataframe
-    
-        # entities = self.ne_freq_dict.keys()
-        #entities = df.iloc[:,0].astype('|S')                     # [col[0] for col in df.iloc]       # df.iloc[:,0]
-        #print(type(entities))   
-        #frequency = df.iloc[:,1].astype('|S')           # df['Frequencies']       # [col[1] for col in df.iloc]       # df.iloc[:,1]
-        #wikitext = df.iloc[:,2]                         # df['Wikitext']           # [col[2] for col in df.iloc]       # df.iloc[:,2]
-        #etymologies = df.iloc[:,3].astype('|S')      # df['Etymologies']     # [col[3] for col in df.iloc]       # df.iloc[:,3]
-        
-        items = self.merged_wikitext_dict
-        print(items)
-
-        entities = items['Entities']
-        print("\n")
-        print(items['Entities'])
-
-        frequency = items['Frequencies']
-        wikitext = items['Wikitext']
-        etymologies = df.iloc[:,3].to_string()
-        # creates stem plot with some variation in level to distinguish close-by events
-        # for each event a text label via annotate is added (which is offset in units of points from the tip of the event line)
-        
-        # sets some levels intervals
-        levels = np.tile([-5, 5, -3, 3, -1, 1],
-                 int(np.ceil(len(entities)/6)))[:len(entities)]
-
-        # generates figure with axis
-        fig, ax = plt.subplots(figsize=(8.8, 4), constrained_layout=True)
-        ax.set(title="Entities, Wikitext, Etymologies")
-        
-        print(type(levels))
-
-        #Come back to this if dataplot is not working properly of format 
-        # sets vertical stem and adds baseline, markerline to it
-        ax.vlines(frequency, 0, levels, color="tab:red")
-        ax.plot(frequency, np.zeros_like(frequency), "-o", color="k", markerfacecolor="w")
-       
-
-        for entity, level, freq in zip(entities, levels, frequency):
-            ax.annotate(freq, xy=(entity,1), xytext=(-3, np.sign(1)*3), 
-            textcoords="offset points", horizontalalignment="right", 
-            verticalalignment="bottom" if level > 0 else "top")
-
-        # formats x-axis of the stem plot
-        #ax.get_xaxis().set_major_locator(entities)                      # DOESN'T WORK   
-        
-        # Fixed formatter
-        # FixedFormatter should only be used together with FixedLocator.
-        # Otherwise, one cannot be sure where the labels will end up.
-        positions = [0, 1, 2, 3, 4, 5]
-        labels = []
-        for entity in entities:
-            labels.append(entity)
-
-        ax.xaxis.set_major_locator(ticker.FixedLocator(positions))
-        ax.xaxis.set_major_formatter(ticker.FixedFormatter(labels))
-
-        
-        plt.setp(ax.get_xticklabels(), rotation=30, ha="right")     # gets the tick labels as a list of Text instances and rotates them
-
-
-
-
-
-        # removes y-axis and spimes
-        ax.get_yaxis().set_visible(False)
-        for spine in ["left", "top", "right"]:
-            ax.spines[spine].set_visible(False)
-        ax.margins(y=0.1)
-        
-        # saves the figure as an image file onto a specified directory
-        plt.savefig(os.path.join(INFOGRAPHICS_DIR, tmpimg))
-        return (plt)
-        """
